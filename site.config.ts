@@ -1,8 +1,9 @@
-import { siteConfig } from './lib/site-config'
+import { siteConfig } from './lib/site-config';
+
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '3ed6053553a04e0698a981797052d7cb',
+  rootNotionPageId: 'e148df86d78c45c2bbfeb72e5955eafb',
 
   // It's will be used as the root page when running `yarn dev`. (optional)
   // If you are suffering from the slow loading or compiling speed, set this to a smaller page.
@@ -14,17 +15,17 @@ export default siteConfig({
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'FKYnJYQ',
+  name: 'Abderrahmane Mehdi Yahiaoui',
   domain: 'nexon-demo.vercel.app',
-  author: 'Feng Kaiyu',
+  author: 'Abderrahmane Mehdi Yahiaoui',
 
   // open graph metadata (optional)
   description: 'Code for Good.',
 
   // social usernames (optional)
-  twitter: 'FKYnJYQ',
-  github: 'fky2015',
-  linkedin: '',
+  twitter: 'real__amy',
+  github: 'abderrahmane-mehdi-yahiaoui',
+  linkedin: 'abderrahmane-mehdi-yahiaoui',
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
 
@@ -34,18 +35,19 @@ export default siteConfig({
   defaultPageCover: null,
   defaultPageCoverPosition: 0.5,
 
+
   // Giscus comments via Github Discusstion (optional)
   //
   // To generate the following configs, visit https://giscus.app/.
   giscusGithubConfig: {
-    repo: 'fky2015/nexon',
+    repo: 'abderrahmane-mehdi-yahiaoui/amy',
     repoId: 'MDEwOlJlcG9zaXRvcnkzNzkxNDQ0NTQ=',
     category: 'Comments',
     categoryId: 'DIC_kwDOFplJBs4COB_h',
     mapping: 'title',
     reactionsEnabled: '1',
     theme: 'light',
-    term: null,
+    term: null
   },
   // whether or not to enable support for LQIP preview images (optional)
   isPreviewImageSupportEnabled: true,
@@ -65,10 +67,10 @@ export default siteConfig({
   // }
   pageUrlOverrides: null,
 
-  // Optional: Normally, the page contain it's metadata 
+  // Optional: Normally, the page contain it's metadata
   // like `CreatedTime`, `LastEditedTime`.
   // These metadata cannot be changed by the user.
-  // If you want to override this with a page property (so that 
+  // If you want to override this with a page property (so that
   // you can custom it's value), specify it's name here.
   //
   // This should align with the property name in Notion.

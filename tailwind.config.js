@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const colors = require('tailwindcss/colors')
 
 // temporary fix, see https://github.com/tailwindlabs/tailwindcss/issues/4690#issuecomment-1046087220

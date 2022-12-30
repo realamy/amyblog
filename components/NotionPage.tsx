@@ -6,7 +6,12 @@ import { useRouter } from 'next/router'
 
 import cs from 'classnames'
 import { PageBlock } from 'notion-types'
-import { formatDate, getBlockTitle, getPageProperty, normalizeTitle } from 'notion-utils'
+import {
+  formatDate,
+  getBlockTitle,
+  getPageProperty,
+  normalizeTitle
+} from 'notion-utils'
 import BodyClassName from 'react-body-classname'
 import { NotionRenderer } from 'react-notion-x'
 import TweetEmbed from 'react-tweet-embed'
@@ -17,8 +22,10 @@ import * as types from '@/lib/types'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { getCanonicalPageUrl, mapPageUrl } from '@/lib/map-page-url'
 import { searchNotion } from '@/lib/search-notion'
+import { slugify } from '@/lib/slugify'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
+import { FacebookComments } from './FacebookComments'
 import { Footer } from './Footer'
 import { GitHubShareButton } from './GitHubShareButton'
 import { Loading } from './Loading'
@@ -26,8 +33,8 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
+// import ReactGiscus from './ReactGiscus';
 import styles from './styles.module.css'
-import ReactGiscus from './ReactGiscus'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -243,13 +250,15 @@ export const NotionPage: React.FC<types.PageProps> = ({
     g.block = block
   }
 
+  const slug = config.isDev ? slugify(title + ' ' + pageId) : slugify(title)
+  console.log(slug)
   const canonicalPageUrl =
     !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
 
   const socialImage = mapImageUrl(
     getPageProperty<string>('Social Image', block, recordMap) ||
-    (block as PageBlock).format?.page_cover ||
-    config.defaultPageCover,
+      (block as PageBlock).format?.page_cover ||
+      config.defaultPageCover,
     block
   )
 
@@ -262,7 +271,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
   // only display comments and page actions on blog post pages
   if (isBlogPost && config.giscusConfig.valid()) {
     comments = (
-      <ReactGiscus darkMode={isDarkMode} />
+      // <ReactGiscus darkMode={isDarkMode} />
+      <FacebookComments href={`http://localhost:3000/${slug}`} />
     )
   }
   return (
