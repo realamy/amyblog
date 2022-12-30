@@ -35,7 +35,6 @@ export default siteConfig({
   defaultPageCover: null,
   defaultPageCoverPosition: 0.5,
 
-
   // Giscus comments via Github Discusstion (optional)
   //
   // To generate the following configs, visit https://giscus.app/.
@@ -87,11 +86,11 @@ export default siteConfig({
   navigationLinks: [
     {
       title: 'About',
-      pageId: '4411298a413c4833a558bc6bd0a87d72'
+      pageId: '82d750733b4b4b9eb3b258051d8c1669'
     },
     {
       title: 'Contact',
-      pageId: '0ffc434b7004472a93e1b156d6db553c'
+      pageId: '103306e41712436d9b5cba365e4e9f36'
     }
   ]
 })
